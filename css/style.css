@@ -1,0 +1,412 @@
+
+/*GLOBALES*/
+html{
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif; /*Font google*/
+    font-size: 62.5%; /*1REM = 10 px*/
+    line-height: 2;
+    /*color: rgb(53, 105, 105);*/
+    color: white;
+}
+body {
+    
+    background: #7f7fd5; 
+    background: -webkit-linear-gradient(to right, #7f7fd5, #86a8e7, #7f7fd5); 
+    background: linear-gradient(to right, #7fb8d5, #86a8e7, #7f7fd5); 
+
+}
+
+a{
+    color: white;
+    font-size: 1.5rem;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+img{
+    max-width: 100%; /*Se acomoda al tamaño de los divs*/
+    display: block;
+}
+
+a{
+    text-decoration: none;
+}
+
+.btn{
+    background-color: rgb(104, 139, 234);
+    display: block;
+    color: #e1e1e1;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.btn:hover{
+    background-color: rgb(73, 114, 227);
+    cursor: pointer;
+}
+
+.container{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+/*HEADER*/
+.nombre-sitio{
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    text-align: center;
+    font-size: 5rem;
+}
+
+/*NAVEGACION -----FLEXBOX*/
+.nav-principal{
+    /*Espacio entre arriba y abajo dentro de nav*/
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    /*Dibuja la linea*/
+    border-color: #e1e1e1;
+    border-top-style: solid;
+    
+     
+    /*Tamaño de la linea*/
+    /*max-width: 80%; 
+    /*centrar la linea con margenes izq y dere
+    margin-right: auto;
+    margin-left: auto;*/
+    /*Se habilita flexbox*/
+    display: flex; 
+    /*Se centran los componentes de izq a der*/
+    justify-content: space-evenly;
+    
+    font-size: 2rem;
+}
+
+.nav-principal a{
+    font-size: 2rem;
+    
+}
+
+/*IMAGEN DE FONDO*/
+.hero{
+    background-image: url(../assets/img/principal.jpg);
+    background-repeat: no-repeat; /*No se repite la img*/
+    background-size: cover; /*el tamaño ancho de la pantalla*/
+    background-position: center center;
+    height: 55rem;
+    /*object-fit: cover;*/
+}
+
+
+/*GRID*/
+.contenido-principal h2,
+.categorias h2{
+    font-size: 3rem;
+    text-align: center; /*Titulo categorias*/
+}
+
+/*Contenedor categorias*/
+.contenedor-categorias{
+    /*Tamaño en la pantalla del contenedor*/
+    max-width: 1119px;
+    /*Espacio entre izq y der*/
+    margin-right: auto;
+    margin-left: auto;
+    
+}
+
+.listado-catgorias{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /*Crea 3  fracciones iguales*/
+    gap: 2rem; /*Espacio entre cada uno de ellos*/
+    
+}
+
+.categorias a{
+    display: block; /*Hace que el enlace se acomode a todo el espacio*/
+    text-align: center; 
+    padding: 2rem; 
+    font-size: 1.8rem;
+    transition: 300ms;
+}
+
+.categorias a:hover{ /*Cuando se pone el mause encima*/
+    background-color: rgb(240, 139, 67); 
+    color: white;
+    border-bottom-right-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+    
+}
+
+/*BOX MODEL*/
+.sobre-nosotros{ /*De izq a dere, transaparente y cafe*/
+    background-image: linear-gradient(to right, transparent 50%, rgb(240, 139, 67) 50%,rgb(240, 139, 67) 100%), url(../assets/img/nosotros.jpg);
+    background-position: left center;
+    padding: 10rem 0;
+    background-repeat: no-repeat;
+    background-size: 100%, 120rem;
+    margin-top: 2.5rem;
+}
+
+/*GRID y FLEXBOX*/
+.sobre-nosotros-grid{
+    /*display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 8rem; /*Espacio entre columnas*/
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+.texto-nosotros{
+    /*grid-column: 2/3;*/
+    flex-basis: 48%;
+    /*padding-left: 10rem;*/
+    /*padding: 5rem;*/
+    text-justify: auto;
+}
+
+.texto-nosotros h2{
+    font-size: 2rem;
+    color: #e1e1e1;
+}
+.texto-nosotros p{
+    font-size: 1.5rem;
+    color: #e1e1e1;
+    text-shadow: #000000;
+}
+
+
+/*Listado de productos*/
+.contenido-principal{
+    padding-top: 2.5rem;
+}
+
+/*GRID*/
+.listado-productos{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /*Se crean 6 columnas*/
+    gap: 1rem;
+}
+.producto:nth-child(1){ /*Se selecciona el primer elemento*/
+    /*grid-column: 1/7; /*Se acomoda desde la columna 1 a la 7*/
+    grid-column-start: 1;
+    grid-column-end: 7;
+
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+.producto:nth-child(1) .text-producto{
+    padding-top: 10rem;
+}
+.producto:nth-child(2){ /*Se selecciona el segundo elemento*/
+    /*grid-column: 1/7; /*Se acomoda desde la columna 1 a la 7*/
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.producto:nth-child(3){ /*Se selecciona el tercero elemento*/
+    /*grid-column: 1/7; /*Se acomoda desde la columna 1 a la 7*/
+    grid-column-start: 4;
+    grid-column-end: 7;
+}
+.producto:nth-child(4){ /*Se selecciona el cuarto elemento*/
+    /*grid-column: 1/7; /*Se acomoda desde la columna 1 a la 7*/
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.producto:nth-child(5){ /*Se selecciona el quinto elemento*/
+    /*grid-column: 1/7; /*Se acomoda desde la columna 1 a la 7*/
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+.producto:nth-child(6){ /*Se selecciona el sexto elemento*/
+    /*grid-column: 1/7; /*Se acomoda desde la columna 1 a la 7*/
+    grid-column-start: 5;
+    grid-column-end: 7;
+}
+.producto:nth-child(1) img{
+    height: 45rem;
+    width: 100%;
+    object-fit: cover;
+}
+.producto:nth-child(2) img{
+    height: 30rem;
+    width: 100%;
+    object-fit: cover;
+}
+.producto:nth-child(3) img{
+    height: 30rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.producto{
+    background-color: rgb(240, 139, 67);
+}
+
+.text-producto{
+    text-align: center;
+    color: #e1e1e1;
+    padding: 3rem;
+}
+
+.text-producto .precio{
+    font-size: 2.8rem;
+    font-weight: 900;
+}
+
+.text-producto h3{
+    margin: 0;
+}
+
+.text-producto p{
+    margin: 0 0 .5rem 0;
+}
+
+
+/**FOOTER*/
+.site-footer{
+    margin-top: 5rem;
+    padding: 2rem;
+    border-color: #e1e1e1;
+    border-top-style: solid;
+}
+
+.site-footer h3{
+    font-size: 2rem;
+}
+.footer-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem;
+    padding-left: 10%;
+}
+
+.nav-footer a{
+    /*
+    display: flex;
+    flex-direction: column;
+    */
+    display: block;
+}
+
+.copyright{
+    margin-top: 4rem;
+    text-align: center;
+}
+
+/*Contenido nosotros*/
+.contenido-nosotros{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); /*responsive*/
+    column-gap: 4rem;
+    background-color: rgb(240, 139, 67);
+}
+
+.informacion-nosotros{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*Blog*/
+
+.contenedor-blog{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 3rem;
+}
+
+.entrada{
+    border-bottom: 2px solid #e1e1e1;
+    padding-bottom: 4rem;
+    margin-bottom: 2rem;
+}
+
+.entrada:last-of-type{ /*Quitar el ultimo border del article*/
+    border: none;
+}
+
+.entrada-meta{
+    display: flex;
+    justify-content: space-between;
+}
+.entrada-meta p {
+    font-weight: 700;
+}
+
+.entrada-meta span{
+    font-weight: bold;
+}
+
+.max-width-30{
+    max-width: 30rem;
+    text-align: center;
+}
+
+.contenido-entrada-blog{
+    width: 60rem;
+    margin: 0 auto;
+}
+
+
+/**GALERIA*/
+
+.galeria{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem
+}
+
+.galeria img{
+    height: 30rem;
+    width: 40rem;
+    object-fit: cover;
+}
+
+/*Formulario*/
+.formulario{
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+.formulario fieldset{
+    border: 1px solid black;
+    margin-bottom: 2rem;
+}
+.formulario legend{
+    background-color: rgb(240, 139, 67);
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+}
+
+.campo{
+    display: flex;
+    margin-bottom: 2rem;
+}
+.campo label{
+    flex-basis: 5rem;   
+}
+
+/*Selecciona todos los inputs excepto el radio*/
+.campo input:not([type="radio"]),
+.campo textarea, 
+.campo select{
+    flex: 1;
+    border: 1px solid #e1e1e1;
+    padding: 1rem;
+}
